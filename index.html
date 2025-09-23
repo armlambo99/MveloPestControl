@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mvelo Pest Control - Professional Pest Management</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #28a745;
+            --secondary-color: #dc3545;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            scroll-behavior: smooth;
+            padding-top: 80px; /* Added to account for fixed navbar */
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1596120236172-231fad6e64f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .section-title.text-center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .service-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 2px solid var(--primary-color);
+            padding: 25px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .promise-card {
+            background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(32, 201, 151, 0.3);
+        }
+        
+        .contact-info-card {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-danger {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            background: #218838;
+            transform: translateY(-3px);
+        }
+        
+        .pest-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pest-list li {
+            background: #28a745;
+            color: white;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border-radius: 25px;
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(40, 167, 69, 0.3);
+        }
+        
+        .differentiators {
+            background: linear-gradient(135deg, #6f42c1 0%, #6610f2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .diff-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stats {
+            background: linear-gradient(135deg, #fd7e14 0%, #ffc107 100%);
+            color: #212529;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .form-control, .form-select {
+            border: 2px solid #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+        }
+        
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-control:not(:placeholder-shown) ~ label,
+        .form-floating > .form-select ~ label {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Ensure modal content looks good */
+        .modal .service-card {
+            border: 1px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+
+        .modal .differentiators {
+            margin: 0;
+        }
+
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border-bottom: none;
+            border-radius: 15px 15px 0 0;
+            padding: 20px 30px;
+        }
+
+        .modal-title {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .modal-body {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .modal-footer {
+            border-top: 1px solid #e9ecef;
+            border-radius: 0 0 15px 15px;
+            padding: 20px 30px;
+        }
+
+        /* Ensure modal content looks good */
+        .modal .service-card {
+            border: 1px solid #dee2e6;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .modal .service-card h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .modal .service-card ul {
+            margin-top: 15px;
+        }
+
+        .modal .service-card li {
+            margin-bottom: 8px;
+        }
+
+        .modal .lead {
+            color: #6c757d;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-shield-alt me-2"></i>MVELO PEST CONTROL
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4 fw-bold mb-4">Your Trusted Partner in Pest-Free Living</h1>
+                    <p class="lead mb-5">Professional pest control services that protect your home, business, and peace of mind</p>
+                    <div class="d-flex justify-content-center flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-primary btn-lg">Get Free Inspection</a>
+                        <a href="tel:0761712455" class="btn btn-danger btn-lg"><i class="fas fa-phone me-2"></i>Call Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">About Mvelo Pest Control</h2>
+                    <p class="lead">Protecting What Matters Most - Your Peace of Mind</p>
+                    <p>At Mvelo Pest Control, we combine years of professional expertise with cutting-edge integrated pest management techniques to protect your home and business. Our certified technicians specialize in comprehensive solutions that go beyond simple extermination.</p>
+                    <p>We believe in a holistic approach that includes targeted treatments, preventive exclusion programs, and ongoing monitoring services - all tailored to your specific needs. When you choose Mvelo Pest Control, you're not just hiring an exterminator; you're partnering with pest management specialists who care about your long-term peace of mind.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Licensed & Insured</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Eco-Friendly Solutions</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Family Safe Treatments</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Emergency Services</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Free Inspections</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Guaranteed Results</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/Images/logoImage.jpg" alt="Professional Pest Control" class="img-fluid rounded shadow">
+                </div>
+            </div>
+            <!-- Add this right after the About section content, before closing the container -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <button class="btn btn-primary btn-lg me-3" data-bs-toggle="modal" data-bs-target="#specializedModal">
+                        <i class="fas fa-tools me-2"></i>View Specialized Services
+                    </button>
+                    <button class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#whyChooseModal">
+                        <i class="fas fa-star me-2"></i>Why Choose Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title text-center">Our Pest Control Services</h2>
+                    <p class="lead">Comprehensive solutions for all your pest problems</p>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h3 class="mb-4">Target Pests We Eliminate:</h3>
+                    <ul class="pest-list">
+                        <li>🐜 Termites</li>
+                        <li>🪳 Cockroaches</li>
+                        <li>🐀 Rats</li>
+                        <li>🪰 Flies</li>
+                        <li>🐜 Ants</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row mt-5 g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h4>Residential Services</h4>
+                        <p>Comprehensive home pest control protecting your family's health and comfort.</p>
+                        <ul class="list-unstyled text-start">
+                            <li><i class="fas fa-check text-success me-2"></i>Termite Control</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Cockroach Elimination</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Rodent Control</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Ant Extermination</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4>Commercial Services</h4>
+                        <p>Professional pest management for businesses, maintaining your reputation and compliance.</p>
+                        <ul class="list-unstyled text-start">
+                            <li><i class="fas fa-check text-success me-2"></i>Restaurant Pest Control</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Office Building Protection</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Warehouse Solutions</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Regular Maintenance Plans</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Integrated Pest Management</h4>
+                        <p>Advanced IPM programs combining multiple strategies for maximum effectiveness.</p>
+                        <ul class="list-unstyled text-start">
+                            <li><i class="fas fa-check text-success me-2"></i>Targeted Treatment Plans</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Prevention Strategies</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Environmentally Responsible</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Ongoing Monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Structural Exclusion</h4>
+                        <p>Sealing and exclusion services to prevent future pest intrusions.</p>
+                        <ul class="list-unstyled text-start">
+                            <li><i class="fas fa-check text-success me-2"></i>Entry Point Identification</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Professional Sealing</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Long-term Prevention</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Maintenance Guidance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h4>Emergency Response</h4>
+                        <p>Rapid response services for urgent pest control situations.</p>
+                        <ul class="list-unstyled text-start">
+                            <li><i class="fas fa-check text-success me-2"></i>24/7 Availability</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Quick Deployment</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Immediate Threat Mitigation</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Follow-up Services</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Free Inspections</h4>
+                        <p>Comprehensive property inspections and expert consultations at no cost.</p>
+                        <ul class="list-unstyled text-start">
+                            <li><i class="fas fa-check text-success me-2"></i>Thorough Assessment</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Detailed Reporting</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Customized Solutions</li>
+                            <li><i class="fas fa-check text-success me-2"></i>No-obligation Quotes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="bg-primary text-white p-5 rounded text-center">
+                        <h3 class="mb-3">Our Service Guarantees</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="promise-card">
+                                    <i class="fas fa-bed fa-3x mb-3"></i>
+                                    <h5>Peaceful Sleep</h5>
+                                    <p>Safe house and clean environment for you and your family</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="promise-card">
+                                    <i class="fas fa-home fa-3x mb-3"></i>
+                                    <h5>Property Protection</h5>
+                                    <p>Safeguarding your valuable property investment from pest damage</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="promise-card">
+                                    <i class="fas fa-smile fa-3x mb-3"></i>
+                                    <h5>Welcome Guests with Confidence</h5>
+                                    <p>Take pride in your pest-free home and business</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Services Modal -->
+    <div class="modal fade" id="specializedModal" tabindex="-1" aria-labelledby="specializedModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="specializedModalLabel">Specialized Services</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <p class="lead">Advanced solutions for specific pest challenges</p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <div class="service-card">
+                                <h3>🐛 Termite Control - "Sibulala Umuhlwa"</h3>
+                                <p>Our flagship termite control service offers comprehensive protection against these destructive pests. We use advanced detection methods and proven treatment protocols to eliminate existing colonies and prevent future infestations.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>Advanced detection methods</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Proven treatment protocols</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Colony elimination</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Future infestation prevention</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 mb-4">
+                            <div class="service-card">
+                                <h3>🪳 Complete Cockroach Solutions</h3>
+                                <p>From German cockroaches in kitchens to American cockroaches in basements, our targeted approach ensures complete elimination and long-term prevention. We guarantee: "Finally! No more sleepless nights."</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>All cockroach species</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Complete elimination</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Long-term prevention</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Guaranteed results</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 mb-4">
+                            <div class="service-card">
+                                <h3>📊 Ongoing Monitoring Programs</h3>
+                                <p>Regular monitoring and maintenance services to ensure your property remains pest-free year-round. Our proactive approach catches problems before they become infestations.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>Regular inspections</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Preventive treatments</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Early problem detection</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Customized schedules</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 mb-4">
+                            <div class="service-card">
+                                <h3>🛡 Fumigation Services</h3>
+                                <p>Professional fumigation for severe infestations, using industry-approved methods and materials to completely eradicate pests from your property.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>Severe infestation treatment</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Industry-approved methods</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Complete eradication</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Safety protocols</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#contact" class="btn btn-primary modal-contact-btn" data-bs-dismiss="modal">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Why Choose Us Modal -->
+    <div class="modal fade" id="whyChooseModal" tabindex="-1" aria-labelledby="whyChooseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="whyChooseModalLabel">Why Choose Mvelo Pest Control?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content from your why choose us section goes here -->
+                    <div class="differentiators">
+                        <h4 class="text-center mb-4">Key Differentiators</h4>
+                        <div class="col-lg-12">
+                            
+                            <div class="diff-grid">
+                                <div class="diff-item">
+                                    <h4>👨‍🔬 Certified Professionals</h4>
+                                    <p>Licensed, trained technicians using industry best practices</p>
+                                </div>
+                                
+                                <div class="diff-item">
+                                    <h4>🔬 Advanced Technology</h4>
+                                    <p>Cutting-edge integrated pest management techniques</p>
+                                </div>
+                                
+                                <div class="diff-item">
+                                    <h4>👨‍👩‍👧‍👦 Family Safe</h4>
+                                    <p>Child-safe and pet-friendly pest control solutions</p>
+                                </div>
+                                
+                                <div class="diff-item">
+                                    <h4>⚡ Fast & Effective</h4>
+                                    <p>Quick response times with lasting, guaranteed results</p>
+                                </div>
+                                
+                                <div class="diff-item">
+                                    <h4>🏠 Locally Owned</h4>
+                                    <p>Community-focused service with personal attention</p>
+                                </div>
+                                
+                                <div class="diff-item">
+                                    <h4>🛡 Fully Insured</h4>
+                                    <p>Licensed and insured for your complete protection</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title text-center">Contact Us</h2>
+                    <p class="lead">Ready to make your home FREE from bad bugs? Get in touch with us today!</p>
+                </div>
+            </div>
+            
+            <div class="row mt-5 g-4">
+                <div class="col-lg-7">
+                    <form id="contactForm" class="p-4 bg-light rounded">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                    <label for="name">Your Full Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                    <label for="email">Your Email Address</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="phone" placeholder="Your Phone">
+                                    <label for="phone">Your Phone Number</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" id="service" required>
+                                        <option value="" selected disabled>Select a service</option>
+                                        <option value="residential">Residential Services</option>
+                                        <option value="commercial">Commercial Services</option>
+                                        <option value="termite">Termite Control</option>
+                                        <option value="cockroach">Cockroach Elimination</option>
+                                        <option value="rodent">Rodent Control</option>
+                                        <option value="inspection">Free Inspection</option>
+                                        <option value="other">Other Services</option>
+                                    </select>
+                                    <label for="service">Service Needed</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                                    <label for="subject">Message Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" required></textarea>
+                                    <label for="message">Your Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="consent" required>
+                                    <label class="form-check-label" for="consent">
+                                        I consent to Mvelo Pest Control contacting me about their services
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="col-lg-5">
+                    <div class="contact-info-card">
+                        <h4 class="mb-4">Get In Touch</h4>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-phone-alt text-primary fa-2x"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Phone</h5>
+                                <p class="mb-0">076 171 2455</p>
+                                <small class="text-muted">24/7 Emergency Response Available</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-envelope text-primary fa-2x"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Email</h5>
+                                <p class="mb-0">Mveloenvironmental@gmail.com</p>
+                                <small class="text-muted">We respond within 24 hours</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-building text-primary fa-2x"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Parent Company</h5>
+                                <p class="mb-0">Mveloenvironmental Solutions</p>
+                                <small class="text-muted">Your trusted environmental partner</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-shield-alt text-primary fa-2x"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Business Status</h5>
+                                <p class="mb-0">Licensed • Insured • Locally Owned</p>
+                                <small class="text-muted">Fully compliant with all regulations</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-clock text-primary fa-2x"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Business Hours</h5>
+                                <p class="mb-0">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                                <p class="mb-0">Saturday: 9:00 AM - 4:00 PM</p>
+                                <p class="mb-0">Sunday: Emergency Services Only</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="text-white mb-4">MVELO PEST CONTROL</h4>
+                    <p>Your trusted partner in pest-free living. Protecting what matters most - your peace of mind.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h4 class="text-white mb-4">Business Hours</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2 text-white">Monday - Friday: 8:00 AM - 6:00 PM</li>
+                        <li class="mb-2 text-white">Saturday: 9:00 AM - 4:00 PM</li>
+                        <li class="mb-2 text-white">Sunday: Emergency Services Only</li>
+                        <li class="mb-2 text-white">24/7 Emergency Response Available</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1)">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Mvelo Pest Control. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">A division of Mveloenvironmental Solutions</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-sm');
+                navbar.style.padding = '10px 0';
+            } else {
+                navbar.classList.remove('shadow-sm');
+                navbar.style.padding = '15px 0';
+            }
+            
+            // Back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+            
+            // Update active nav link on scroll
+            updateActiveNavLink();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Calculate the correct offset considering the fixed navbar
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Back to top button functionality
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you shortly.');
+            this.reset();
+        });
+
+        // Smooth scroll for modal contact button
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal-contact-btn')) {
+                // Get the contact section
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                    // Calculate the correct offset considering the fixed navbar
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = contactSection.offsetTop - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+
+        // Update active nav link function
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navbarHeight - 50;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial active nav link setup
+            updateActiveNavLink();
+        });
+    </script>
+</body>
+</html>
